@@ -4,7 +4,8 @@
   "description": "Github starred repos viewer",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@babel/core": "^7.15.0",
@@ -15,6 +16,7 @@
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
     "node-sass": "^6.0.1",
+    "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sass-loader": "^12.1.0",
