@@ -6,7 +6,6 @@ export const SelectLanguage = ({ setLanguage }) => {
       <div>SELECT LANGUAGE</div>
       <select
         name="Language"
-        id="cars"
         onChange={(evt) => setLanguage(evt.target.value)}
       >
         <option value="">All</option>
