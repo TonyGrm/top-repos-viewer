@@ -23,7 +23,7 @@ export const Content = ({
   return (
     <ul className="grid-container">
       {reposToDisplay.length > 0 &&
-        reposToDisplay?.map(
+        reposToDisplay.map(
           ({
             id,
             name,
