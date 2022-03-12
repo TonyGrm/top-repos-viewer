@@ -1,13 +1,16 @@
 import React from 'react';
 
-export const ButtonStarRepo = ({ setStarredRepos, id, starredRepos }) => {
+export const ButtonStarRepo = ({ setStarredRepos, repo, starredRepos }) => {
   const onClick = () => {
-    if (!starredRepos.includes(id)) {
-      return setStarredRepos([...starredRepos, id]);
-    } else return setStarredRepos(starredRepos.filter((el) => el !== id));
+    if (!starredRepos.some((savedRepo) => savedRepo.id === repo.id)) {
+      return setStarredRepos([...starredRepos, repo]);
+    } else
+      return setStarredRepos(
+        starredRepos.filter((savedRepo) => savedRepo.id !== repo.id)
+      );
   };
 
-  const isStarred = starredRepos.includes(id);
+  const isStarred = starredRepos.some((savedRepo) => savedRepo.id === repo.id);
   const style = `btn-star ${isStarred ? 'btn-star--unstar' : ''}`;
 
   return (

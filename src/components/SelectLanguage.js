@@ -6,11 +6,15 @@ export const SelectLanguage = ({ setLanguage }) => {
       <div>SELECT LANGUAGE</div>
       <select
         name="Language"
-        onChange={(evt) => setLanguage(evt.target.value)}
+        onChange={(evt) => {
+          setLanguage(evt.target.value);
+        }}
       >
         <option value="">All</option>
         <option value="js">Javascript</option>
+        <option value="java">Java</option>
         <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
         <option value="go">Go</option>
       </select>
     </div>

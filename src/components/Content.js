@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import { Card } from './Card';
+import { LANGUAGE_MAP } from '../constants';
 
 export const Content = ({
   repos = [],
   setStarredRepos,
   starredRepos,
   showStarred,
+  selectedLanguage,
 }) => {
   const filterRepos = () => {
-    if (showStarred) return repos.filter(({ id }) => starredRepos.includes(id));
+    if (showStarred)
+      return selectedLanguage
+        ? starredRepos.filter(
+            (repo) => repo.language === LANGUAGE_MAP[selectedLanguage]
+          )
+        : starredRepos;
     return repos;
   };
   const reposToDisplay = filterRepos();
@@ -22,6 +29,7 @@ export const Content = ({
             name,
             html_url: url,
             description,
+            language,
             stargazers_count: stars,
           }) => {
             return (
@@ -34,6 +42,7 @@ export const Content = ({
                 url={url}
                 description={description}
                 stars={stars}
+                language={language}
               />
             );
           }

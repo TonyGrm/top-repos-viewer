@@ -33,8 +33,10 @@ export const AppContainer = () => {
             setLanguage={setLanguage}
             setShowStarred={setShowStarred}
             showStarred={showStarred}
+            setStarredRepos={setStarredRepos}
           />
           <Content
+            selectedLanguage={language}
             showStarred={showStarred}
             repos={repos}
             starredRepos={starredRepos}

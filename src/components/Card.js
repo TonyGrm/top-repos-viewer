@@ -8,9 +8,10 @@ export const Card = ({
   description,
   stars,
   starredRepos,
+  language,
   setStarredRepos,
 }) => {
-  const isStarred = starredRepos.includes(id);
+  const isStarred = starredRepos.some((savedRepo) => savedRepo.id === id);
   const style = `card ${isStarred ? 'starred' : ''}`;
   return (
     <li key={id} className={style}>
@@ -26,10 +27,18 @@ export const Card = ({
         <p>RATING: {stars}</p>
       </div>
       <div className="card-btn-container">
+        {console.log(language)}
         <ButtonStarRepo
           setStarredRepos={setStarredRepos}
           starredRepos={starredRepos}
-          id={id}
+          repo={{
+            id,
+            name,
+            html_url: url,
+            description,
+            stargazers_count: stars,
+            language,
+          }}
         />
       </div>
     </li>

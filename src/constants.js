@@ -6,3 +6,11 @@ export const getLastWeekDate = () => {
     .toISOString()
     .split('T')[0];
 };
+
+export const LANGUAGE_MAP = {
+  java: 'Java',
+  js: 'Javascript',
+  python: 'Python',
+  go: 'Go',
+  ruby: 'Ruby'
+};
